@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var qtd_alunos = 2;
+
+    function classificacaoIMC(valorIMC){
+
+        var calculoIMC = pesoAluno / (alturaAluno*alturaAluno);
+
+        if(calculoIMC < 18.5){
+            document.write("Classificação Magreza - Obesidade Grau Zero");
+            document.write("<br>")
+            document.write("O valor do IMC é: "+calculoIMC);
+        } else if(calculoIMC >= 18.5 && 24.9){
+            document.write("Classificação Normal - Obesidade Grau Zero");
+            document.write("<br>")
+            document.write("O valor do IMC é: "+calculoIMC);
+        } else if(calculoIMC >= 25.0 && 29.9){
+            document.write("Classificação Obesidade - Obesidade Grau Um");
+            document.write("<br>")
+            document.write("O valor do IMC é: "+calculoIMC);
+        }else if(calculoIMC >= 30.0 && 39.9){
+            document.write("Classificação Obesidade - Obesidade Grau Dois");
+            document.write("<br>")
+            document.write("O valor do IMC é: "+calculoIMC);
+        } else if(calculoIMC >= 40.0){
+            document.write("Classificação Obesidade Grave - Obesidade Grau Três");
+            document.write("<br>")
+            document.write("O valor do IMC é: "+calculoIMC);
+        }
+    }
+
+    //alert("Seja Bem Vindo ao Sistema de Calculo de IMC, ainda faltam "+qtd_alunos+" para serem cadastrados.");
+
+    var informacoesAlunos = [[qtd_alunos],[qtd_alunos],[qtd_alunos],[qtd_alunos]];
+
+    //Captura dos valores de cada estudante
+
+
+ 
+    
+
+</script>
+</html>
