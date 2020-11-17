@@ -8,48 +8,64 @@
 <body>
     
 </body>
-
 <script>
-    alert("Seja Bem Vindo ao Restaurante Universitário!");
 
-    var resposta = prompt("Deseja Participar da Pesquisa?");
-    var qtd_entrevistados = 0;
-    var menos_que_dez = 0;
-    var deDezAQuinze = 0;
-    var maisDeQuize = 0;
+    function calculoIMC(pesoAluno, alturaAluno){
+        return pesoAluno / (alturaAluno**2).toFixed(2);
+    }
 
-    do{ 
+    function definicaoNivelIMC(resultado){
 
-        var qtd_visitas = prompt("Quantas vezes você utilizou o Restaurante Universitário neste mês?");
-
-        if(qtd_visitas < 10){
-            menos_que_dez++;
-        }else if(qtd_visitas >= 10 && qtd_visitas <=15){
-            deDezAQuinze++;
-        }else if(qtd_visitas > 15){
-            maisDeQuize++;
+        if(resultado < 18.5){
+            document.write("Classificação Magreza - Obesidade Grau Zero");
+            document.write("<br>")
+            document.write("O valor do IMC é: "+resultado);
+        } else if(resultado >= 18.5 && 24.9){
+            document.write("Classificação Normal - Obesidade Grau Zero");
+            document.write("<br>")
+            document.write("O valor do IMC é: "+resultado);
+        } else if(resultado >= 25.0 && 29.9){
+            document.write("Classificação Obesidade - Obesidade Grau Um");
+            document.write("<br>")
+            document.write("O valor do IMC é: "+resultado);
+        }else if(resultado >= 30.0 && 39.9){
+            document.write("Classificação Obesidade - Obesidade Grau Dois");
+            document.write("<br>")
+            document.write("O valor do IMC é: "+resultado);
+        } else if(resultado >= 40.0){
+            document.write("Classificação Obesidade Grave - Obesidade Grau Três");
+            document.write("<br>")
+            document.write("O valor do IMC é: "+resultado);
         }
 
-        var resposta = prompt("Deseja Participar da Pesquisa?");
+    }
 
-        qtd_entrevistados++
-    }while(resposta == "sim"){};
 
-    var total_visitas = (menos_que_dez+deDezAQuinze+maisDeQuize);
 
-    var porcentagem_menos_que_dez = (menos_que_dez / qtd_entrevistados)*100;
-    var porcentagem_de_dez_a_quinze = (deDezAQuinze / qtd_entrevistados)*100;
-    var porcentagem_maisDeQuize = (maisDeQuize / qtd_entrevistados)*100;
+    alert("Seja bem vindo ao sistema de calculo de IMC dos Alunos.");
 
-    document.write("A porcetagem de pessoas que frequentam menos de dez vezes por mês o restaurante é de "+porcentagem_menos_que_dez.toFixed(1)+"%.");
-    document.write("<br>");
-    document.write("A porcetagem de pessoas que frequentam entre dez e quinze vezes por mês o restaurante é de "+porcentagem_de_dez_a_quinze.toFixed(1)+"%.");
-    document.write("<br>");
-    document.write("A porcetagem de pessoas que frequentam menos de dez vezes por mês o restaurante é de "+porcentagem_maisDeQuize.toFixed(1)+"%.");
-    document.write("<br>");
-    document.write("Quantidade total de Entrevistados: "+qtd_entrevistados);
-    document.write("<br>")
-    
+    var qtd_alunos = prompt("Digite a quantidade de alunos: ");
+    var alunosContabilizados = 0;
+    var dadosAlunos = [];
+
+            for(let i = 0; i < qtd_alunos; i++){
+
+            var pesoAluno = prompt("Digite o peso do Aluno: ");
+            var alturaAluno = prompt("Digite a altura do Aluno: ");
+
+            let resultado = calculoIMC(pesoAluno, alturaAluno);
+            
+
+            document.write(definicaoNivelIMC(resultado));
+                
+            dadosAlunos[i] = resultado;
+            
+            alunosContabilizados++;
+            }
+
+
+
+
 
 </script>
 </html>
