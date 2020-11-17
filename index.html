@@ -8,44 +8,47 @@
 <body>
     
 </body>
+
 <script>
-    var qtd_alunos = 2;
+    alert("Seja Bem Vindo ao Restaurante Universitário!");
 
-    function classificacaoIMC(valorIMC){
+    var resposta = prompt("Deseja Participar da Pesquisa?");
+    var qtd_entrevistados = 0;
+    var menos_que_dez = 0;
+    var deDezAQuinze = 0;
+    var maisDeQuize = 0;
 
-        var calculoIMC = pesoAluno / (alturaAluno*alturaAluno);
+    do{ 
 
-        if(calculoIMC < 18.5){
-            document.write("Classificação Magreza - Obesidade Grau Zero");
-            document.write("<br>")
-            document.write("O valor do IMC é: "+calculoIMC);
-        } else if(calculoIMC >= 18.5 && 24.9){
-            document.write("Classificação Normal - Obesidade Grau Zero");
-            document.write("<br>")
-            document.write("O valor do IMC é: "+calculoIMC);
-        } else if(calculoIMC >= 25.0 && 29.9){
-            document.write("Classificação Obesidade - Obesidade Grau Um");
-            document.write("<br>")
-            document.write("O valor do IMC é: "+calculoIMC);
-        }else if(calculoIMC >= 30.0 && 39.9){
-            document.write("Classificação Obesidade - Obesidade Grau Dois");
-            document.write("<br>")
-            document.write("O valor do IMC é: "+calculoIMC);
-        } else if(calculoIMC >= 40.0){
-            document.write("Classificação Obesidade Grave - Obesidade Grau Três");
-            document.write("<br>")
-            document.write("O valor do IMC é: "+calculoIMC);
+        var qtd_visitas = prompt("Quantas vezes você utilizou o Restaurante Universitário neste mês?");
+
+        if(qtd_visitas < 10){
+            menos_que_dez++;
+        }else if(qtd_visitas >= 10 && qtd_visitas <=15){
+            deDezAQuinze++;
+        }else if(qtd_visitas > 15){
+            maisDeQuize++;
         }
-    }
 
-    //alert("Seja Bem Vindo ao Sistema de Calculo de IMC, ainda faltam "+qtd_alunos+" para serem cadastrados.");
+        var resposta = prompt("Deseja Participar da Pesquisa?");
 
-    var informacoesAlunos = [[qtd_alunos],[qtd_alunos],[qtd_alunos],[qtd_alunos]];
+        qtd_entrevistados++
+    }while(resposta == "sim"){};
 
-    //Captura dos valores de cada estudante
+    var total_visitas = (menos_que_dez+deDezAQuinze+maisDeQuize);
 
+    var porcentagem_menos_que_dez = (menos_que_dez / qtd_entrevistados)*100;
+    var porcentagem_de_dez_a_quinze = (deDezAQuinze / qtd_entrevistados)*100;
+    var porcentagem_maisDeQuize = (maisDeQuize / qtd_entrevistados)*100;
 
- 
+    document.write("A porcetagem de pessoas que frequentam menos de dez vezes por mês o restaurante é de "+porcentagem_menos_que_dez.toFixed(1)+"%.");
+    document.write("<br>");
+    document.write("A porcetagem de pessoas que frequentam entre dez e quinze vezes por mês o restaurante é de "+porcentagem_de_dez_a_quinze.toFixed(1)+"%.");
+    document.write("<br>");
+    document.write("A porcetagem de pessoas que frequentam menos de dez vezes por mês o restaurante é de "+porcentagem_maisDeQuize.toFixed(1)+"%.");
+    document.write("<br>");
+    document.write("Quantidade total de Entrevistados: "+qtd_entrevistados);
+    document.write("<br>")
     
 
 </script>
